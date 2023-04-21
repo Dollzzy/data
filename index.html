@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Data curenta</title>
+</head>
+<body>
+    <div class="Page">
+        <div class="DataZone">
+            <div class="Year" id="DIV"></div>
+            <div class="month" id="DIV"></div>
+            <div class="Day" id="DIV"></div>
+            <div class="Hours" id="DIV"></div>
+            <div class="Minutes" id="DIV"></div>
+        </div>
+        <div class="Details" id="DIV"></div>
+        <button class="Refresh" onclick="Reload()">ReImprospateaza pagina</button>
+    </div>
+</body>
+<script>
+    var Y,M,D,H,M,Details
+        Y = document.querySelector(".Year");
+        M = document.querySelector(".month");
+        D = document.querySelector(".Day");
+        H = document.querySelector(".Hours");
+        m = document.querySelector(".Minutes");
+        Details = document.querySelector(".Details")
+
+    var monthNames = ["Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie",
+            "Iulie", "August", "Septembrie", "Octombrie", "Noiembrie", "Decembrie"
+        ];
+
+    const d = new Date()
+        Y.innerHTML = d.getFullYear();
+        M.innerHTML = d.getMonth() + 1;
+        D.innerHTML = d.getDate();
+        H.innerHTML = d.getHours();
+        m.innerHTML = d.getMinutes();
+        Details.innerHTML = monthNames[d.getMonth()];
+
+        function Reload() {
+            location.reload();
+        }
+</script>
+</html>
